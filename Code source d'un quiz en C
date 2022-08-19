@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int reponse[7]={1,1,4,2,3,4,5};
+    int score =0;
+    int i,t;
+    int rep;
+    char c[10];
+
+        printf("\n***************************************\n");
+        printf("\n*   BIENVENU AU JEU QUESTIONS/REPONSES  *\n");
+        printf("\n***************************************\n");
+        printf("\n Enter votre nom \n");
+        scanf("%s",&c);
+          char*tab[7]={"I. Qui es-tu ?\n " "1.Une personne 2.Je ne sais pas 3.Un animal\n","II. Le Tchad est-il ?\n" "1.Un pays 2.Un continent 3.Une ville\n",
+          "III. Quelle est la capitale du Tchad?\n" "1.Abeche 2.Moundou 3.Sarh 4.Ndjamena\n","IV. Quelle est la devise du Tchad?\n" "1.Unite-Liberte-Progres  2.Unite-Travail-Progres  3.Liberte-Egalite-Progres\n",
+          "V. Dans quel continent se trouve le Tchad ?\n" "1. Asiatique 2. Europeen 3. Africain 4. Americain\n","VI. Quelle est la monnaie du Tchad ?\n" "1. Euro 2. Dollar 3. Livre 4. FCFA\n",
+          "VII. Le Tchad compte combien de province ?\n" "1. 10    2. 21    3. 16    4. 20    5. 23\n"  };
+
+            for (i=0;i<7;i++)
+            {
+                printf("%s",tab[i]);
+                printf("\nReponse=");
+                scanf("%d",&rep);
+
+                    if (rep==reponse[i])
+                        {
+                            printf ("***********************************BONNE REPONSE***************************************\n");
+                            score ++;
+                        }
+                    else
+                    {
+                        printf ("Mauvaise reponse\n");
+                        printf ("La bonne reponse est :%d\n",reponse[i]);
+                    }
+            }
+               printf("Votre score est de %d\n",score);
+
+                         if (score==7) {
+                            printf("***************************************");
+                            printf("*  FELICITATIONS %s VOUS AVEZ GAGNER  *",c);
+                            printf("***************************************");
+                        }
+                         else if (score==4 || score==5 || score==6)
+                            printf("%s VOUS ETES PRESQUE",c);
+                         else printf("%s VOUS ETES NUL",c);
+
+
+            }
